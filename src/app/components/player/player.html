@@ -1,7 +1,8 @@
-color: {{color | json}}
-<hr>
-
 <slider value="1" (change)="onChangeVolume($event)"></slider>
+
+<div class="visually-hidden">
+  <canvas id="intersection-canvas" data-paper-keepalive="true" width="600" height="600"></canvas>
+</div>
 
 <div class="player-wrapper">
   <div class="player-display">
@@ -40,7 +41,4 @@ color: {{color | json}}
       </g>
     </svg>
   </div>
-</div>
-<div class="visually-hidden">
-  <canvas id="intersection-canvas" data-paper-keepalive=true width="600" height="600"></canvas>
 </div>
