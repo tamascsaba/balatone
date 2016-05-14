@@ -78,9 +78,10 @@ export class Player implements OnInit {
   }
 
   ngOnInit() {
+    this.initalizeCanvas();
+
     this.qp
       .pluck<string>('theme')
-      .distinctUntilChanged()
       .map((theme) => {
         if (THEMES[theme] && paper.project) {
           this.theme = THEMES[theme];
@@ -88,9 +89,6 @@ export class Player implements OnInit {
         }
         this.importSVG();
       }).subscribe();
-
-    this.initalizeCanvas();
-    this.setupAudio();
   }
 
   initalizeCanvas() {
