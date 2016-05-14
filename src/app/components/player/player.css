@@ -45,6 +45,10 @@
   margin: -1px; padding: 0; border: 0;
 }
 
+.display-none {
+  display: none;
+}
+
 .control {
   fill: #FFF;
   transform: translate(265px, 265px);

@@ -24,6 +24,7 @@ export class Player implements OnInit {
   theme: Theme = THEMES.starWars; // Default theme;
   audios: Points<HTMLAudioElement>;
   canvas: HTMLCanvasElement;
+  play: boolean = false;
   displayShape: string;
   shape: paper.Item;
   octagon: paper.Item;
@@ -53,16 +54,17 @@ export class Player implements OnInit {
   };
 
   constructor(private elementRef: ElementRef, private qp: QueryParams) {
-    this.audios = this.createAudioElements();
+    this.createAudioElements();
+    this.setupAudio();
   }
 
   createAudioElements() {
-    let i = 0, audios = {};
+    let i = 0;
+    (<any>this).audios = {};
     for (let point of Object.keys(this.points)) {
-      audios[point] = new Audio();
-      audios[point].loop = true;
+      this.audios[point] = new Audio();
+      this.audios[point].loop = true;
     }
-    return <Points<HTMLAudioElement>>audios;
   }
 
   setupAudio() {
@@ -71,14 +73,25 @@ export class Player implements OnInit {
       if (this.audios.hasOwnProperty(audio)) {
         this.audios[audio].pause();
         this.audios[audio].setAttribute('src', '/assets/mp3/' + this.theme.items[i++].music);
-        this.audios[audio].play();
       }
-
     }
   }
 
+  onControl() {
+    for (let audio in this.audios) {
+      if (this.audios.hasOwnProperty(audio)) {
+        if (this.play) {
+          this.audios[audio].pause();
+        } else {
+          this.audios[audio].play();
+        }
+      }
+    }
+    this.play = !this.play;
+  }
+
   ngOnInit() {
-    this.initalizeCanvas();
+    this.setupCanvas();
 
     this.qp
       .pluck<string>('theme')
@@ -86,17 +99,14 @@ export class Player implements OnInit {
         if (THEMES[theme] && paper.project) {
           this.theme = THEMES[theme];
           this.setupAudio();
+          this.play = false;
         }
         this.importSVG();
       }).subscribe();
   }
 
-  initalizeCanvas() {
-    const nativeElement = this.elementRef.nativeElement;
-    this.canvas = nativeElement.querySelector('#intersection-canvas');
-    this.canvas.setAttribute('data-paper-keepalive', 'true');
-
-    paper.setup(this.canvas);
+  setupCanvas() {
+    paper.setup('intersection-canvas');
   }
 
   importSVG() {
