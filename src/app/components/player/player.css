@@ -1,14 +1,21 @@
 .display-line {
-  stroke: #000;
+  stroke: #FFF;
   stroke-width: 1;
 }
 
 .display-circle {
-  fill: #000;
+  fill: #FFF;
 }
 
 .display-shape {
   fill: none;
-  stroke: #000;
+  stroke: #FFF;
   stroke-width: 1;
+}
+
+.icon {
+  fill: none;
+  stroke: #FFF;
+  stroke-width: 1;
+  stroke-miterlimit: 10;
 }

@@ -1,10 +1,14 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
-    <path id="top" d="M249.5 0v200"/>
-    <path id="top-right" d="M285.29 215.21L426.71 73.79"/>
-    <path id="right" d="M300 250.5h200"/>
-    <path id="right-bottom" d="M285.29 285.79l141.42 141.42"/>
-    <path id="bottom" d="M249.5 300v200"/>
-    <path id="bottom-left" d="M73.29 427.21l141.42-141.42"/>
-    <path id="left" d="M0 250.5h200"/>
-    <path id="left-top" d="M73.29 73.79l141.422 141.42"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600">
+  <g fill="none" stroke="#231F20" stroke-miterlimit="10">
+    <path id="top" d="M298.5 100v160"/>
+    <path id="top-right" d="M328.23 272.168L441.37 159.03"/>
+    <path id="right" d="M340 301.5h160"/>
+    <path id="right-bottom" d="M328.23 328.632L441.37 441.77"/>
+    <path id="bottom" d="M298.5 340v160"/>
+    <path id="bottom-left" d="M158.632 441.77l113.136-113.14"/>
+    <path id="left" d="M100 301.5h160"/>
+    <path id="left-top" d="M158.632 159.032L271.77 272.168"/>
+  </g>
+  <circle cx="300" cy="300" r="300" fill="none" stroke="#231F20" stroke-width=".25" stroke-miterlimit="10"/>
+  <circle cx="300" cy="300" r="200" fill="none" stroke="#231F20" stroke-width=".25" stroke-miterlimit="10"/>
 </svg>

@@ -15,9 +15,9 @@ export class Player implements OnInit {
   shape;
   octagon;
 
-  center: number = 250; // Canvas center x == y
-  lineStart: number = 50;
-  lineLength: number = 200;
+  center: number = 300; // Canvas center x == y
+  lineStart: number = 40;
+  lineLength: number = 160;
   lineCount: number = 8;
 
   speed: number = 0.2;
