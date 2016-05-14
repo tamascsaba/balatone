@@ -18,14 +18,14 @@ export const blackbird: Theme = {
     cross
   ],
   items: [
-    {icon: 'stormtrooper', music: 'blackbird/closebird.mp3', x: 264.5, y: 15.5},
-    {icon: 'c-3po', music: 'blackbird/crickets.mp3', x: 514.5, y: 265.5},
-    {icon: 'darth-vader', music: 'blackbird/cuckoo.mp3', x: 442.5, y: 88.5},
-    {icon: 'r2-d2', music: 'blackbird/forest.mp3', x: 441.5, y: 442.5},
-    {icon: 'battle-droid', music: 'blackbird/rain.mp3', x: 264.5, y: 515.5},
-    {icon: 'millennium-falcon', music: 'blackbird/thunder.mp3', x: 88.5, y: 442.5},
-    {icon: 'death-star', music: 'blackbird/train.mp3', x: 14.5, y: 265.5},
-    {icon: 'bb-8', music: 'blackbird/waterfall.mp3', x: 87.5, y: 88.5}
+    {icon: 'closebird', music: 'blackbird/closebird.mp3', x: 264.5, y: 15.5},
+    {icon: 'crickets', music: 'blackbird/crickets.mp3', x: 514.5, y: 265.5},
+    {icon: 'cuckoo', music: 'blackbird/cuckoo.mp3', x: 442.5, y: 88.5},
+    {icon: 'forest', music: 'blackbird/forest.mp3', x: 441.5, y: 442.5},
+    {icon: 'rain', music: 'blackbird/rain.mp3', x: 264.5, y: 515.5},
+    {icon: 'thunder', music: 'blackbird/thunder.mp3', x: 88.5, y: 442.5},
+    {icon: 'train', music: 'blackbird/train.mp3', x: 14.5, y: 265.5},
+    {icon: 'waterfall', music: 'blackbird/waterfall.mp3', x: 87.5, y: 88.5}
   ]
 };
 
