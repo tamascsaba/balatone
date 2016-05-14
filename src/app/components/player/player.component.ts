@@ -8,6 +8,7 @@ import {paper} from 'paper';
 import {Observable} from 'rxjs/Observable';
 
 import {THEMES, Theme} from '../../shared/themes';
+import {Points} from '../../shared/points';
 import {ToFixedPipe} from '../../pipes/toFixed.pipe';
 
 import {Slider} from '../slider';
@@ -20,7 +21,8 @@ import {Slider} from '../slider';
   template: require('./player.html')
 })
 export class Player implements OnInit {
-  theme: Theme = THEMES.starWars; // Default theme
+  theme: Theme = THEMES.starWars; // Default theme;
+  audios: Points<HTMLAudioElement>;
   canvas: HTMLCanvasElement;
   displayShape: string;
   shape: paper.Item;
@@ -31,7 +33,7 @@ export class Player implements OnInit {
   lineLength: number = 160;
   lineCount: number = 8;
 
-  speed: number = 0.2;
+  speed: number = 0.1;
   rotate: number = 0;
 
   size: number = 1;
@@ -39,7 +41,7 @@ export class Player implements OnInit {
 
   color = {r: 0, g: 0, b: 0};
 
-  points = {
+  points: Points<any> = {
     'top': '',
     'top-right': '',
     'right': '',
@@ -51,6 +53,28 @@ export class Player implements OnInit {
   };
 
   constructor(private elementRef: ElementRef, private qp: QueryParams) {
+    this.audios = this.createAudioElements();
+  }
+
+  createAudioElements() {
+    let i = 0, audios = {};
+    for (let point of Object.keys(this.points)) {
+      audios[point] = new Audio();
+      audios[point].loop = true;
+    }
+    return <Points<HTMLAudioElement>>audios;
+  }
+
+  setupAudio() {
+    let i = 0;
+    for (let audio in this.audios) {
+      if (this.audios.hasOwnProperty(audio)) {
+        this.audios[audio].pause();
+        this.audios[audio].setAttribute('src', '/assets/mp3/' + this.theme.items[i++].music);
+        this.audios[audio].play();
+      }
+
+    }
   }
 
   ngOnInit() {
@@ -58,13 +82,15 @@ export class Player implements OnInit {
       .pluck<string>('theme')
       .distinctUntilChanged()
       .map((theme) => {
-        if (THEMES[theme]) {
+        if (THEMES[theme] && paper.project) {
           this.theme = THEMES[theme];
+          this.setupAudio();
         }
         this.importSVG();
       }).subscribe();
 
     this.initalizeCanvas();
+    this.setupAudio();
   }
 
   initalizeCanvas() {
@@ -135,7 +161,12 @@ export class Player implements OnInit {
       };
 
       this.processColor(name, value);
+      this.setVolume(name, value);
     }
+  }
+
+  setVolume(name, value) {
+    this.audios[name].volume = value;
   }
 
   getPoints() {
