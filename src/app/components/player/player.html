@@ -18,15 +18,9 @@ player display:
     <path class="display-line" d="M73.29 73.79l141.422 141.42"/>
   </g>
   <g>
-    <path attr.transform="rotate({{rotate}} 250 250)" class="display-shape" d="M160 215c37.19-33.63 22.127-106.04 106-122 107.29-20.417 149 38 171.498 72.752C458.778 198.625 478 256 451.396 323.198c-24.897 62.888-72.932 73.694-102.616 59.014C316 366 314 344 284.35 326.157c-28.855-17.365-58.874 9.653-71.17 23.37C202 362 187.856 395.772 147.532 407.124 116 416 72 406 55.765 386.705c-15.168-18.026-28.82-32.582-17.902-78.023C51 254 126.36 245.42 160 215z"/>
-    <circle class="display-circle" attr.cx="{{points['top'].x}}" attr.cy="{{points['top'].y}}" r="6" />
-    <circle class="display-circle" attr.cx="{{points['top-right'].x}}" attr.cy="{{points['top-right'].y}}" r="6" />
-    <circle class="display-circle" attr.cx="{{points['right'].x}}" attr.cy="{{points['right'].y}}" r="6" />
-    <circle class="display-circle" attr.cx="{{points['right-bottom'].x}}" attr.cy="{{points['right-bottom'].y}}" r="6" />
-    <circle class="display-circle" attr.cx="{{points['bottom'].x}}" attr.cy="{{points['bottom'].y}}" r="6" />
-    <circle class="display-circle" attr.cx="{{points['bottom-left'].x}}" attr.cy="{{points['bottom-left'].y}}" r="6" />
-    <circle class="display-circle" attr.cx="{{points['left'].x}}" attr.cy="{{points['left'].y}}" r="6" />
-    <circle class="display-circle" attr.cx="{{points['left-top'].x}}" attr.cy="{{points['left-top'].y}}" r="6" />
+    <path attr.transform="rotate({{rotate | toFixed}} 250 250)" class="display-shape" d="M160 215c37.19-33.63 22.127-106.04 106-122 107.29-20.417 149 38 171.498 72.752C458.778 198.625 478 256 451.396 323.198c-24.897 62.888-72.932 73.694-102.616 59.014C316 366 314 344 284.35 326.157c-28.855-17.365-58.874 9.653-71.17 23.37C202 362 187.856 395.772 147.532 407.124 116 416 72 406 55.765 386.705c-15.168-18.026-28.82-32.582-17.902-78.023C51 254 126.36 245.42 160 215z"/>
+
+    <circle *ngFor="let item of getPoints(); let i = index" attr.cx="{{points[item].x}}" attr.cy="{{points[item].y}}" class="display-circle" r="6"></circle>
   </g>
 </svg>
 

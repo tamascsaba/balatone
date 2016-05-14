@@ -1,9 +1,12 @@
 import {Component, ElementRef, OnInit} from '@angular/core';
 
+import {ToFixedPipe} from '../pipes/toFixed.pipe';
+
 import {paper} from 'paper';
 
 @Component({
   selector: 'player',
+  pipes: [ToFixedPipe],
   styles: [require('./player.css')],
   template: require('./player.html')
 })
@@ -88,6 +91,10 @@ export class Player implements OnInit {
 
       this.processColor(name, value);
     }
+  }
+
+  getPoints() {
+    return Object.keys(this.points);
   }
 
   processSliderValue(point) {
