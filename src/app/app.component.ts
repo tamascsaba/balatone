@@ -27,7 +27,7 @@ import {Header} from './components/header';
     <route-view></route-view>
 
     <footer>
-      We love Angular2 & TypeScript and heavy weight
+      We love Angular2 & TypeScript and heavy weight :)
     </footer>
   `
 })
