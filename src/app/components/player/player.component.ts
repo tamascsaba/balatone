@@ -1,11 +1,15 @@
+import 'rxjs/add/operator/pluck';
+import 'rxjs/add/observable/from';
+
 import {Component, ElementRef, OnInit, Input} from '@angular/core';
 import {QueryParams} from '@ngrx/router';
+import {paper} from 'paper';
 
-import 'rxjs/add/operator/pluck';
+import {Observable} from 'rxjs/Observable';
 
+import {THEMES, Theme} from '../../shared/themes';
 import {ToFixedPipe} from '../../pipes/toFixed.pipe';
 
-import {paper} from 'paper';
 import {Slider} from '../slider';
 
 @Component({
@@ -16,7 +20,7 @@ import {Slider} from '../slider';
   template: require('./player.html')
 })
 export class Player implements OnInit {
-  @Input() theme: string;
+  theme: Theme = THEMES.starWars; // Default theme
   canvas: HTMLCanvasElement;
   shape: paper.Item;
   octagon: paper.Item;
@@ -50,9 +54,14 @@ export class Player implements OnInit {
       .pluck<string>('theme')
       .distinctUntilChanged()
       .map((theme) => {
-        this.theme = theme;
+        if (theme) {
+          this.theme = THEMES[theme];
+          console.log(theme);
+          console.log(this.theme);
+        }
         this.importSVG();
       }).subscribe();
+
     this.initalizeCanvas();
   }
 

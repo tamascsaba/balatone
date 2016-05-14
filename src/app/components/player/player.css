@@ -1,3 +1,14 @@
+.player-wrapper {
+  display: table;
+  width: 100%;
+}
+.player-display {
+  will-change: transform;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+}
+
 .display-line {
   stroke: #FFF;
   stroke-width: 1;
@@ -24,4 +35,12 @@
   stroke: #FFF;
   stroke-width: .5;
   stroke-dasharray: 5, 10;
+}
+
+.visually-hidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px; width: 1px;
+  margin: -1px; padding: 0; border: 0;
 }
