@@ -1,4 +1,7 @@
 import {Component, ElementRef, OnInit, Input} from '@angular/core';
+import {QueryParams} from '@ngrx/router';
+
+import 'rxjs/add/operator/pluck';
 
 import {ToFixedPipe} from '../../pipes/toFixed.pipe';
 
@@ -37,33 +40,57 @@ export class Player implements OnInit {
     'left-top': ''
   };
 
-  constructor(protected elementRef: ElementRef) {
+  constructor(private elementRef: ElementRef, private qp: QueryParams) {
   }
 
   ngOnInit() {
+    this.qp
+      .pluck<string>('theme')
+      .distinctUntilChanged()
+      .map((theme) => {
+        this.theme = theme;
+        this.importSVG();
+      }).subscribe();
+    this.initalizeCanvas();
+  }
+
+  initalizeCanvas() {
     const nativeElement = this.elementRef.nativeElement;
     this.canvas = nativeElement.querySelector('#intersection-canvas');
     this.canvas.setAttribute('data-paper-keepalive', 'true');
 
     paper.setup(this.canvas);
 
-    // import SVG elements
-    const svg = nativeElement.querySelector('#intersection-svg');
-    const elements: paper.Item = paper.project.importSVG(svg);
+    this.importSVG();
 
-    elements.visible = true;
-    elements.fillColor = undefined;
-    elements.strokeColor = 'black';
+  }
 
-    this.shape = (<any>elements).children.shape;
-    this.octagon = (<any>elements).children.octagon;
+  importSVG() {
+    if (paper.project) {
+      const nativeElement = this.elementRef.nativeElement;
+      const svg = nativeElement.querySelector('#intersection-svg');
 
-    this.shape.position = paper.view.center;
-    this.octagon.position = paper.view.center;
+      // Reset the project
+      this.rotate = 0;
+      paper.project.clear();
 
-    this.lineCount = this.octagon.children.length;
+      // Import the intersection svg
+      const elements: paper.Item = paper.project.importSVG(svg);
 
-    paper.view.onFrame = this.onFrame;
+      elements.visible = true;
+      elements.fillColor = undefined;
+      elements.strokeColor = 'black';
+
+      this.shape = (<any>elements).children.shape;
+      this.octagon = (<any>elements).children.octagon;
+
+      this.shape.position = paper.view.center;
+      this.octagon.position = paper.view.center;
+
+      this.lineCount = this.octagon.children.length;
+
+      paper.view.onFrame = this.onFrame;
+    }
   }
 
   onFrame = () => {

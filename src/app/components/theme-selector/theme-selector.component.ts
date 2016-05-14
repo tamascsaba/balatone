@@ -11,5 +11,4 @@ export class ThemeSelector {
   onClick(event, theme) {
     this.onThemeChange.next(theme);
   }
-
 }
