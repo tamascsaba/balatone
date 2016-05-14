@@ -9,11 +9,17 @@ import '@angular/platform-browser-dynamic';
 import '@angular/core';
 import '@angular/common';
 import '@angular/http';
-import '@angular/router-deprecated';
 
 // RxJS
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/mergeMap';
+
+
+// NgRx
+import '@ngrx/router';
+
+// Paper
+import 'paper';
 
 // Angular 2 Material 2
 import '@angular2-material/button';

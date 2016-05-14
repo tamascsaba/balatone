@@ -1,12 +1,4 @@
-/*
- * Angular 2 decorators and services
- */
-import { Component, ViewEncapsulation } from '@angular/core';
-import { RouteConfig, Router } from '@angular/router-deprecated';
-
-import { AppState } from './app.service';
-import { Home } from './home';
-import { RouterActive } from './router-active';
+import {Component, ViewEncapsulation } from '@angular/core';
 
 /*
  * App Component
@@ -16,7 +8,6 @@ import { RouterActive } from './router-active';
   selector: 'app',
   pipes: [ ],
   providers: [ ],
-  directives: [ RouterActive ],
   encapsulation: ViewEncapsulation.None,
   styles: [
     require('normalize.css'),
@@ -64,7 +55,7 @@ import { RouterActive } from './router-active';
 
       <md-progress-bar mode="indeterminate" color="primary" *ngIf="loading"></md-progress-bar>
 
-      <router-outlet></router-outlet>
+      <route-view></route-view>
 
       <footer>
         Balatone Waves we love Angular2 & TypeScript
@@ -72,11 +63,6 @@ import { RouterActive } from './router-active';
       </md-content>
   `
 })
-@RouteConfig([
-  { path: '/',      name: 'Index', component: Home, useAsDefault: true },
-  { path: '/home',  name: 'Home',  component: Home },
-  { path: '/about', name: 'About', loader: () => require('es6-promise!./about')('About') }
-])
 export class App {
   loading = false;
   name = 'Balatone';

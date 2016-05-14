@@ -2,17 +2,16 @@ import { Component } from '@angular/core';
 
 import { AppState } from '../app.service';
 
+import {paper} from 'paper';
+
 @Component({
-  selector: 'home',  // <home></home>
+  selector: 'home',
   styles: [ require('./home.css') ],
   template: require('./home.html')
 })
 export class Home {
-  // Set our default values
-  localState = { value: '' };
-  // TypeScript public modifiers
   constructor(public appState: AppState) {
-
+    console.log(paper.version);
   }
 
   submitState(value) {
