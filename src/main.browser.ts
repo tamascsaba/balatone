@@ -1,3 +1,5 @@
+import {provide} from '@angular/core';
+import {HashLocationStrategy, LocationStrategy} from '@angular/common';
 import {bootstrap} from '@angular/platform-browser-dynamic';
 
 import {provideRouter, Routes} from '@ngrx/router';
@@ -23,7 +25,8 @@ export function main(initialHmrState?: any): Promise<any> {
     ...DIRECTIVES,
     ...PIPES,
     ...APP_PROVIDERS,
-    provideRouter(routes)
+    provideRouter(routes),
+    provide(LocationStrategy, {useClass: HashLocationStrategy})
   ])
   .catch(err => console.error(err));
 
