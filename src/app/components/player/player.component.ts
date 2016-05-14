@@ -54,10 +54,8 @@ export class Player implements OnInit {
       .pluck<string>('theme')
       .distinctUntilChanged()
       .map((theme) => {
-        if (theme) {
+        if (THEMES[theme]) {
           this.theme = THEMES[theme];
-          console.log(theme);
-          console.log(this.theme);
         }
         this.importSVG();
       }).subscribe();
