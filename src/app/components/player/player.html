@@ -1,4 +1,12 @@
-<slider value="1" (change)="onChangeVolume($event)"></slider>
+
+<div style="width: 50%; float: left;">
+  <slider value="1" (change)="onChangeVolume($event)"></slider>
+</div>
+<div style="width: 50%; float: right;">
+  <slider [value]="sliderSpeedValue" (change)="onChangeSpeed($event)"></slider>
+</div>
+
+
 
 <div class="visually-hidden">
   <canvas id="intersection-canvas" data-paper-keepalive="true" width="600" height="600"></canvas>

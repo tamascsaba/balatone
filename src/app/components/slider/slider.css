@@ -4,12 +4,22 @@
 }
 
 .slider-bar {
-  overflow: hidden;
-  height: 5px;
+  height: 2px;
+  position: relative;
+  margin-right: 20px;
+  background: rgba(225, 225, 225, 0.5);
 }
 
 .slider-line {
   height: 2px;
-  width: 0;
   background: #FFF;
+}
+
+.slider-ring {
+  position: absolute;
+  top: -9px;
+  height: 16px;
+  width: 16px;
+  border: 2px solid #FFF;
+  border-radius: 50%;
 }

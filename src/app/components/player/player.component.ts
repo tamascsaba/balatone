@@ -34,7 +34,8 @@ export class Player implements OnInit {
   lineLength: number = 160;
   lineCount: number = 8;
 
-  speed: number = 0.1;
+  sliderSpeedValue = 0.04;
+  speed: number;
   rotate: number = 0;
 
   size: number = 1;
@@ -182,7 +183,7 @@ export class Player implements OnInit {
   }
 
   processColor(name, value) {
-    const colorValue = Math.round(255 * value);
+    const colorValue = Math.round(220 * value); // 255! 220 > darker
 
     if (name === 'top') {
       this.color.r = colorValue;
@@ -200,5 +201,9 @@ export class Player implements OnInit {
   onChangeVolume(value) {
     this.size = value;
     this.pos = 300 * (1 - value);
+  }
+
+  onChangeSpeed(value) {
+    this.speed = 5 * value;
   }
 }

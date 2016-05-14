@@ -33,7 +33,7 @@
 .display-volume {
   fill: none;
   stroke: #FFF;
-  stroke-width: .5;
+  stroke-width: 1;
   stroke-dasharray: 5, 10;
 }
 
