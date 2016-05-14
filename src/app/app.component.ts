@@ -6,11 +6,17 @@ import {Component, ViewEncapsulation} from '@angular/core';
  */
 @Component({
   selector: 'app',
-  pipes: [ ],
-  providers: [ ],
   encapsulation: ViewEncapsulation.None,
   styles: [
-    require('normalize.css')
+    require('normalize.css'),
+    `
+    footer {
+      margin-top: 20px;
+      color: #fff;
+      font-weight: bold;
+      text-align:center;
+    }
+    `
   ],
   template: `
     <header >

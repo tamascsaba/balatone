@@ -22,6 +22,7 @@ import {Slider} from '../slider';
 export class Player implements OnInit {
   theme: Theme = THEMES.starWars; // Default theme
   canvas: HTMLCanvasElement;
+  displayShape: string;
   shape: paper.Item;
   octagon: paper.Item;
 
@@ -79,29 +80,32 @@ export class Player implements OnInit {
 
   importSVG() {
     if (paper.project) {
-      const nativeElement = this.elementRef.nativeElement;
-      const svg = nativeElement.querySelector('#intersection-svg');
-
       // Reset the project
-      this.rotate = 0;
       paper.project.clear();
 
       // Import the intersection svg
-      const elements: paper.Item = paper.project.importSVG(svg);
+      paper.project.importSVG(this.theme.shapes[0], (elements) => {
+        // Export to use in angular
+        const svg = paper.project.exportSVG();
 
-      elements.visible = true;
-      elements.fillColor = undefined;
-      elements.strokeColor = 'black';
+        elements.visible = true;
+        elements.fillColor = undefined;
+        elements.strokeColor = 'black';
 
-      this.shape = (<any>elements).children.shape;
-      this.octagon = (<any>elements).children.octagon;
+        this.shape = (<any>elements).children.shape;
+        this.octagon = (<any>elements).children.octagon;
 
-      this.shape.position = paper.view.center;
-      this.octagon.position = paper.view.center;
+        this.shape.position = paper.view.center;
+        this.octagon.position = paper.view.center;
 
-      this.lineCount = this.octagon.children.length;
+        this.lineCount = this.octagon.children.length;
 
-      paper.view.onFrame = this.onFrame;
+        this.rotate = 0;
+        this.displayShape = svg.querySelector('#display-shape').getAttribute('d');
+
+        paper.view.onFrame = this.onFrame;
+      });
+
     }
   }
 
