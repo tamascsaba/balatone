@@ -10,12 +10,18 @@
 .display-shape {
   fill: none;
   stroke: #FFF;
-  stroke-width: 1;
+  stroke-width: 2;
 }
 
 .icon {
   fill: none;
   stroke: #FFF;
   stroke-width: 1;
-  stroke-miterlimit: 10;
+}
+
+.display-volume {
+  fill: none;
+  stroke: #FFF;
+  stroke-width: .5;
+  stroke-dasharray: 5, 10;
 }
