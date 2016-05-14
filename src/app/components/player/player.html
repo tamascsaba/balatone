@@ -2,6 +2,8 @@ color: {{color.r}}, {{color.g}}, {{color.b}}
 theme: {{theme}}
 <hr>
 
+<slider value="1" (change)="onChangeVolume($event)"></slider>
+
 <svg class="player-display" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600" width="600" height="600">
   <g class="display-line">
     <path d="M298.5 100v160"/>

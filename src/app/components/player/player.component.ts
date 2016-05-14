@@ -6,10 +6,12 @@ import 'rxjs/add/operator/pluck';
 import {ToFixedPipe} from '../../pipes/toFixed.pipe';
 
 import {paper} from 'paper';
+import {Slider} from '../slider';
 
 @Component({
   selector: 'player',
   pipes: [ToFixedPipe],
+  directives: [Slider],
   styles: [require('./player.css')],
   template: require('./player.html')
 })
@@ -146,5 +148,9 @@ export class Player implements OnInit {
     const rgb = 'rgb(' + this.color.r + ',' + this.color.g + ',' + this.color.b + ')';
 
     document.body.style.backgroundColor = rgb;
+  }
+
+  onChangeVolume(value) {
+    console.log(value);
   }
 }

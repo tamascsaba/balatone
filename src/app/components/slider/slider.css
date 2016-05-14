@@ -1,0 +1,17 @@
+.slider-touch {
+  padding: 10px;
+  cursor: pointer;
+  background: #000;
+}
+
+.slider-bar {
+  overflow: hidden;
+  height: 5px;
+  background: #000;
+}
+
+.slider-line {
+  height: 5px;
+  width: 0;
+  background: #FFF;
+}
