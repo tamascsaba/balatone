@@ -21,7 +21,7 @@ import {Slider} from '../slider';
   template: require('./player.html')
 })
 export class Player implements OnInit {
-  theme: Theme = THEMES.starWars; // Default theme;
+  theme: Theme = THEMES.blackbird; // Default theme;
   audios: Points<HTMLAudioElement>;
   canvas: HTMLCanvasElement;
   play: boolean = false;

@@ -15,7 +15,7 @@ interface Item {
 
 export const blackbird: Theme = {
   shapes: [
-    cloud
+    cross
   ],
   items: [
     {icon: 'stormtrooper', music: 'blackbird/closebird.mp3', x: 264.5, y: 15.5},
