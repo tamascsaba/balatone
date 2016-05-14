@@ -1,11 +1,14 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 
+import {Header} from './components/header';
+
 /*
  * App Component
  * Top Level Component
  */
 @Component({
   selector: 'app',
+  directives: [Header],
   encapsulation: ViewEncapsulation.None,
   styles: [
     require('normalize.css'),
@@ -19,9 +22,7 @@ import {Component, ViewEncapsulation} from '@angular/core';
     `
   ],
   template: `
-    <header >
-      <span>{{name}}</span>
-    </header>
+    <header></header>
 
     <route-view></route-view>
 
@@ -32,7 +33,6 @@ import {Component, ViewEncapsulation} from '@angular/core';
 })
 export class App {
   loading = false;
-  name = 'Balatone';
   url = 'http://balatone.2016.angularattack.io/';
 
   constructor() {
