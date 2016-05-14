@@ -123,7 +123,6 @@ module.exports = {
           helpers.root('node_modules/rxjs'),
           helpers.root('node_modules/paper'),
           helpers.root('node_modules/@ngrx'),
-          helpers.root('node_modules/@angular2-material'),
           helpers.root('node_modules/@angular'),
         ]
       }

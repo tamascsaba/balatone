@@ -1,14 +1,14 @@
-import { bootstrap } from '@angular/platform-browser-dynamic';
+import {bootstrap} from '@angular/platform-browser-dynamic';
 
-import { provideRouter, Routes } from '@ngrx/router';
+import {provideRouter, Routes} from '@ngrx/router';
 
-import { DIRECTIVES, PIPES, PROVIDERS } from './platform/browser';
-import { ENV_PROVIDERS } from './platform/environment';
+import {DIRECTIVES, PIPES, PROVIDERS} from './platform/browser';
+import {ENV_PROVIDERS} from './platform/environment';
 
-import { App, APP_PROVIDERS } from './app';
+import {App, APP_PROVIDERS} from './app';
 
-import { Home } from './app/_home';
-import { About } from './app/_about';
+import {Home} from './app/_home';
+import {About} from './app/_about';
 
 const routes: Routes = [
   {path: '/', component: Home},

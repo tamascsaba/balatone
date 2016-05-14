@@ -1,8 +1,5 @@
+import {enableProdMode} from '@angular/core';
 
-// Angular 2
-import { enableProdMode } from '@angular/core';
-
-// Environment Providers
 let PROVIDERS = [];
 
 if ('production' === ENV) {
@@ -20,7 +17,6 @@ if ('production' === ENV) {
   ];
 
 }
-
 
 export const ENV_PROVIDERS = [
   ...PROVIDERS

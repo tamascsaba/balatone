@@ -1,4 +1,4 @@
-import {Component, ViewEncapsulation } from '@angular/core';
+import {Component, ViewEncapsulation} from '@angular/core';
 
 /*
  * App Component
@@ -10,57 +10,18 @@ import {Component, ViewEncapsulation } from '@angular/core';
   providers: [ ],
   encapsulation: ViewEncapsulation.None,
   styles: [
-    require('normalize.css'),
-    `html, body{
-      height: 100%;
-      background: #F4FAFA;
-    }
-    button.active{
-      background: #fff;
-      color: #009688;
-    }
-    button.active:hover{
-      color: #fff;
-    }
-    .fill{
-      flex: 1 1 auto;
-    }
-    .app-state{
-      margin: 15px;
-      flex: 1;
-    }
-    .home{
-      flex: 1;
-    }
-    md-content{
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-    }
-    footer{
-      flex: 0 0 60px;
-      padding: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #fff;
-    }`
+    require('normalize.css')
   ],
   template: `
-    <md-content>
-      <md-toolbar color="primary">
-          <span>{{ name }}</span>
-          <span class="fill"></span>
-      </md-toolbar>
+    <header >
+      <span>{{name}}</span>
+    </header>
 
-      <md-progress-bar mode="indeterminate" color="primary" *ngIf="loading"></md-progress-bar>
+    <route-view></route-view>
 
-      <route-view></route-view>
-
-      <footer>
-        Balatone Waves we love Angular2 & TypeScript
-      </footer>
-      </md-content>
+    <footer>
+      Balatone Waves we love Angular2 & TypeScript
+    </footer>
   `
 })
 export class App {

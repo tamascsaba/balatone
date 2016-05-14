@@ -37,17 +37,17 @@ export class Player implements OnInit {
   }
 
   ngOnInit() {
-    console.log(this.elementRef);
     const nativeElement = this.elementRef.nativeElement;
     this.canvas = nativeElement.querySelector('#intersection-canvas');
     this.canvas.setAttribute('data-paper-keepalive', 'true');
+
     paper.setup(this.canvas);
 
     // import SVG elements
     const svg = nativeElement.querySelector('#intersection-svg');
     const elements = paper.project.importSVG(svg);
     elements.visible = true;
-    elements.fillColor = null;
+    elements.fillColor = undefined;
     elements.strokeColor = 'black';
 
     this.shape = (<any>elements).children.shape;
@@ -91,19 +91,19 @@ export class Player implements OnInit {
   }
 
   processSliderValue(point) {
-    var a = point.x - this.center;
-    var b = point.y - this.center;
+    const a = point.x - this.center;
+    const b = point.y - this.center;
     return (Math.sqrt(a * a + b * b) - this.lineStart) / this.lineLength;
   }
 
   processColor(name, value) {
     const colorValue = Math.round(255 * value);
 
-    if (name == 'top') {
+    if (name === 'top') {
       this.color.r = colorValue;
-    } else if (name == 'right-bottom') {
+    } else if (name === 'right-bottom') {
       this.color.g = colorValue;
-    } else if (name == 'bottom-left') {
+    } else if (name === 'bottom-left') {
       this.color.b = colorValue;
     }
 
