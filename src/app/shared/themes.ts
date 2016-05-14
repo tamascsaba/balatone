@@ -1,4 +1,4 @@
-import {millenniumFalcon, formless} from './shapes';
+import {millenniumFalcon, formless, cross} from './shapes';
 
 
 export interface Theme {
@@ -31,7 +31,7 @@ export const blackbird: Theme = {
 
 export const starWars: Theme = {
   shapes: [
-    millenniumFalcon
+    cross
   ],
   items: [
     {icon: 'darth-vader', music: 'star-wars/darth-vader.mp3', x: 264.5, y: 15.5},
