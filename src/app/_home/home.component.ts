@@ -1,17 +1,17 @@
-import { Component } from '@angular/core';
+import {Component} from '@angular/core';
 
-import { AppState } from '../app.service';
+import {AppState} from '../app.service';
 
-import {paper} from 'paper';
+import {Player} from '../components/player';
 
 @Component({
   selector: 'home',
-  styles: [ require('./home.css') ],
+  directives: [Player],
+  styles: [require('./home.css')],
   template: require('./home.html')
 })
 export class Home {
   constructor(public appState: AppState) {
-    console.log(paper.version);
   }
 
   submitState(value) {

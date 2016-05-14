@@ -1,0 +1,62 @@
+color: {{color.r}}, {{color.g}}, {{color.b}}
+
+<hr>
+
+player display:
+
+<hr>
+
+<svg class="player-display" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <g>
+    <path class="display-line" d="M249.5 0v200"/>
+    <path class="display-line" d="M285.29 215.21L426.71 73.79"/>
+    <path class="display-line" d="M300 250.5h200"/>
+    <path class="display-line" d="M285.29 285.79l141.42 141.42"/>
+    <path class="display-line" d="M249.5 300v200"/>
+    <path class="display-line" d="M73.29 427.21l141.42-141.42"/>
+    <path class="display-line" d="M0 250.5h200"/>
+    <path class="display-line" d="M73.29 73.79l141.422 141.42"/>
+  </g>
+  <g>
+    <path attr.transform="rotate({{rotate}} 250 250)" class="display-shape" d="M160 215c37.19-33.63 22.127-106.04 106-122 107.29-20.417 149 38 171.498 72.752C458.778 198.625 478 256 451.396 323.198c-24.897 62.888-72.932 73.694-102.616 59.014C316 366 314 344 284.35 326.157c-28.855-17.365-58.874 9.653-71.17 23.37C202 362 187.856 395.772 147.532 407.124 116 416 72 406 55.765 386.705c-15.168-18.026-28.82-32.582-17.902-78.023C51 254 126.36 245.42 160 215z"/>
+    <circle class="display-circle" attr.cx="{{points['top'].x}}" attr.cy="{{points['top'].y}}" r="6" />
+    <circle class="display-circle" attr.cx="{{points['top-right'].x}}" attr.cy="{{points['top-right'].y}}" r="6" />
+    <circle class="display-circle" attr.cx="{{points['right'].x}}" attr.cy="{{points['right'].y}}" r="6" />
+    <circle class="display-circle" attr.cx="{{points['right-bottom'].x}}" attr.cy="{{points['right-bottom'].y}}" r="6" />
+    <circle class="display-circle" attr.cx="{{points['bottom'].x}}" attr.cy="{{points['bottom'].y}}" r="6" />
+    <circle class="display-circle" attr.cx="{{points['bottom-left'].x}}" attr.cy="{{points['bottom-left'].y}}" r="6" />
+    <circle class="display-circle" attr.cx="{{points['left'].x}}" attr.cy="{{points['left'].y}}" r="6" />
+    <circle class="display-circle" attr.cx="{{points['left-top'].x}}" attr.cy="{{points['left-top'].y}}" r="6" />
+  </g>
+</svg>
+
+<hr>
+
+test canvas:
+
+<hr>
+
+<canvas id="intersection-canvas" width="500" height="500"></canvas>
+
+<hr>
+
+source pattern:
+
+<hr>
+
+<svg id="intersection-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <g id="shape">
+    <path d="M160 215c37.19-33.63 22.127-106.04 106-122 107.29-20.417 149 38 171.498 72.752C458.778 198.625 478 256 451.396 323.198c-24.897 62.888-72.932 73.694-102.616 59.014C316 366 314 344 284.35 326.157c-28.855-17.365-58.874 9.653-71.17 23.37C202 362 187.856 395.772 147.532 407.124 116 416 72 406 55.765 386.705c-15.168-18.026-28.82-32.582-17.902-78.023C51 254 126.36 245.42 160 215z"/>
+    <path d="M-10,250a260,260 0 1,0 520,0a260,260 0 1,0 -520,0"></path>
+  </g>
+  <g id="octagon">
+    <path id="top" d="M249.5 0v200"/>
+    <path id="top-right" d="M285.29 215.21L426.71 73.79"/>
+    <path id="right" d="M300 250.5h200"/>
+    <path id="right-bottom" d="M285.29 285.79l141.42 141.42"/>
+    <path id="bottom" d="M249.5 300v200"/>
+    <path id="bottom-left" d="M73.29 427.21l141.42-141.42"/>
+    <path id="left" d="M0 250.5h200"/>
+    <path id="left-top" d="M73.29 73.79l141.422 141.42"/>
+  </g>
+</svg>

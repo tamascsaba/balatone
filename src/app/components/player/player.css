@@ -1,0 +1,14 @@
+.display-line {
+  stroke: #000;
+  stroke-width: 1;
+}
+
+.display-circle {
+  fill: #000;
+}
+
+.display-shape {
+  fill: none;
+  stroke: #000;
+  stroke-width: 1;
+}
