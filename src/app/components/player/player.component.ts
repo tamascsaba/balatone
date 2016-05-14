@@ -97,40 +97,34 @@ export class Player implements OnInit {
     this.canvas.setAttribute('data-paper-keepalive', 'true');
 
     paper.setup(this.canvas);
-
-    this.importSVG();
-
   }
 
   importSVG() {
-    if (paper.project) {
-      // Reset the project
-      paper.project.clear();
+    // Reset the project
+    paper.project.clear();
 
-      // Import the intersection svg
-      paper.project.importSVG(this.theme.shapes[0], (elements) => {
-        // Export to use in angular
-        const svg = paper.project.exportSVG();
+    // Import the intersection svg
+    paper.project.importSVG(this.theme.shapes[0], (elements) => {
+      // Export to use in angular
+      const svg = paper.project.exportSVG();
 
-        elements.visible = true;
-        elements.fillColor = undefined;
-        elements.strokeColor = 'black';
+      elements.visible = true;
+      elements.fillColor = undefined;
+      elements.strokeColor = 'black';
 
-        this.shape = (<any>elements).children.shape;
-        this.octagon = (<any>elements).children.octagon;
+      this.shape = (<any>elements).children.shape;
+      this.octagon = (<any>elements).children.octagon;
 
-        this.shape.position = paper.view.center;
-        this.octagon.position = paper.view.center;
+      this.shape.position = paper.view.center;
+      this.octagon.position = paper.view.center;
 
-        this.lineCount = this.octagon.children.length;
+      this.lineCount = this.octagon.children.length;
 
-        this.rotate = 0;
-        this.displayShape = svg.querySelector('#display-shape').getAttribute('d');
+      this.rotate = 0;
+      this.displayShape = svg.querySelector('#display-shape').getAttribute('d');
 
-        paper.view.onFrame = this.onFrame;
-      });
-
-    }
+      paper.view.onFrame = this.onFrame;
+    });
   }
 
   onFrame = () => {
