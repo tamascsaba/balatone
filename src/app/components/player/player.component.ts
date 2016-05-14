@@ -1,6 +1,6 @@
 import {Component, ElementRef, OnInit} from '@angular/core';
 
-import {ToFixedPipe} from '../pipes/toFixed.pipe';
+import {ToFixedPipe} from '../../pipes/toFixed.pipe';
 
 import {paper} from 'paper';
 
@@ -49,6 +49,7 @@ export class Player implements OnInit {
     // import SVG elements
     const svg = nativeElement.querySelector('#intersection-svg');
     const elements = paper.project.importSVG(svg);
+
     elements.visible = true;
     elements.fillColor = undefined;
     elements.strokeColor = 'black';
