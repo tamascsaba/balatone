@@ -8,3 +8,11 @@
   margin-top: 10px;
   text-align: center;
 }
+
+.theme-selector-link {
+  cursor: pointer;
+}
+
+.theme-selector-link path{
+  fill: #FFF;
+}
