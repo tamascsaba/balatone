@@ -33,6 +33,9 @@ export class Player implements OnInit {
   speed: number = 0.2;
   rotate: number = 0;
 
+  size: number = 1;
+  pos: number = 0;
+
   color = {r: 0, g: 0, b: 0};
 
   points = {
@@ -158,6 +161,7 @@ export class Player implements OnInit {
   }
 
   onChangeVolume(value) {
-    console.log(value);
+    this.size = value;
+    this.pos = 300 * (1 - value);
   }
 }
