@@ -1,4 +1,4 @@
-import {Component, ElementRef, OnInit} from '@angular/core';
+import {Component, ElementRef, OnInit, Input} from '@angular/core';
 
 import {ToFixedPipe} from '../../pipes/toFixed.pipe';
 
@@ -11,9 +11,10 @@ import {paper} from 'paper';
   template: require('./player.html')
 })
 export class Player implements OnInit {
-  canvas;
-  shape;
-  octagon;
+  @Input() theme: string;
+  canvas: HTMLCanvasElement;
+  shape: paper.Item;
+  octagon: paper.Item;
 
   center: number = 300; // Canvas center x == y
   lineStart: number = 40;
@@ -48,7 +49,7 @@ export class Player implements OnInit {
 
     // import SVG elements
     const svg = nativeElement.querySelector('#intersection-svg');
-    const elements = paper.project.importSVG(svg);
+    const elements: paper.Item = paper.project.importSVG(svg);
 
     elements.visible = true;
     elements.fillColor = undefined;

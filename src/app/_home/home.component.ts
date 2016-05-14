@@ -11,11 +11,10 @@ import {Player} from '../components/player';
   template: require('./home.html')
 })
 export class Home {
-  constructor(public appState: AppState) {
-  }
+  theme: string = 'star_wars';
 
-  submitState(value) {
-    this.appState.set('value', value);
+  changeTheme(theme) {
+    this.theme = theme;
   }
 
 }

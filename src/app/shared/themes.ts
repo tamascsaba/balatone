@@ -1,4 +1,4 @@
-import {millenniumFalcon, formless} from "./shapes";
+import {millenniumFalcon, formless} from './shapes';
 
 export const blackbird = {
   shapes: [
