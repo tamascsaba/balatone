@@ -25,8 +25,16 @@ player display:
 
     <circle *ngFor="let item of getPoints(); let i = index" attr.cx="{{points[item].x}}" attr.cy="{{points[item].y}}" class="display-circle" r="6"/>
   </g>
-  <use class="icon" x="264" y="14" width="70" height="70" xlink:href="/assets/img/icons.svg#icon-sw1"></use>
-  <use class="icon" x="87" y="87" width="70" height="70" xlink:href="/assets/img/icons.svg#icon-sw2"></use>
+  <g class="icon">
+    <use x="264" y="14" width="70" height="70" xlink:href="/assets/img/icons.svg#icon-sw1"></use>
+    <use x="450" y="87" width="70" height="70" xlink:href="/assets/img/icons.svg#icon-sw2"></use>
+    <use x="500" y="257" width="70" height="70" xlink:href="/assets/img/icons.svg#icon-sw1"></use>
+    <use x="450" y="420" width="70" height="70" xlink:href="/assets/img/icons.svg#icon-sw2"></use>
+    <use x="264" y="510" width="70" height="70" xlink:href="/assets/img/icons.svg#icon-sw1"></use>
+    <use x="87" y="420" width="70" height="70" xlink:href="/assets/img/icons.svg#icon-sw2"></use>
+    <use x="27" y="257" width="70" height="70" xlink:href="/assets/img/icons.svg#icon-sw1"></use>
+    <use x="87" y="87" width="70" height="70" xlink:href="/assets/img/icons.svg#icon-sw2"></use>
+  </g>
 </svg>
 
 <hr>
