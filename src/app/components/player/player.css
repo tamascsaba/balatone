@@ -84,7 +84,8 @@
 
 .slider-item:last-child {
   margin-right: 0;
-  width: 15px;
+  padding: 0;
+  width: 24px;
   float: right;
 }
 
@@ -92,8 +93,6 @@
   cursor: pointer;
   width: 24px;
   height: 24px;
+  display: inline-block;
   fill: #FFF;
-  position: relative;
-  left: -20px;
-  top: 25px
 }

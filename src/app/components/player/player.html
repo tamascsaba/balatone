@@ -1,19 +1,23 @@
 <div class="slider-box">
-  <div class="slider-item">
+  <div class="slider-item" >
+    <span class="hint--top" data-hint="Stop Animation">
     <svg class="slider-icon" (click)="sliderSpeedValue = 0">
       <use xlink:href="/assets/img/icons.svg#icon-speed"></use>
     </svg>
+    </span>
     <slider [value]="sliderSpeedValue" (change)="onChangeSpeed($event)"></slider>
   </div>
 
   <div class="slider-item">
-    <svg class="slider-icon" (click)="sliderVolumeValue = 0">
-      <use xlink:href="/assets/img/icons.svg#icon-sound"></use>
-    </svg>
-    <slider [value]="sliderVolumeValue" (change)="onChangeVolume($event)"></slider>
+    <span class="hint--top" data-hint="Mute Sound">
+      <svg class="slider-icon" (click)="sliderVolumeValue = 0">
+        <use xlink:href="/assets/img/icons.svg#icon-sound"></use>
+      </svg>
+    </span>
+      <slider [value]="sliderVolumeValue" (change)="onChangeVolume($event)"></slider>
   </div>
-  <div class="slider-item">
-    <svg class="slider-icon" (click)="bgChangeEnabled = !bgChangeEnabled">
+  <div class="slider-item hint--top" [attr.data-hint]="(bgChangeEnabled ? 'Disable': 'Enable') + ' background animation'">
+    <svg class="slider-icon" (click)="bgChangeEnabled = !bgChangeEnabled" >
       <use [attr.xlink:href]="'/assets/img/icons.svg#icon-bg-' + bgChangeEnabled"></use>
     </svg>
   </div>

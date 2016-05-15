@@ -1,4 +1,9 @@
+:host {
+  display: inline-block;
+}
+
 .slider-touch {
+  width: 200px;
   padding: 10px;
   cursor: pointer;
 }

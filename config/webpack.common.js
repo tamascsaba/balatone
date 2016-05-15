@@ -140,6 +140,16 @@ module.exports = {
     loaders: [
 
       /*
+       * Webworker support for better performance
+       *
+       * See: https://github.com/webpack/worker-loader
+       */
+      {
+        test: /\.worker\.js$/,
+        loader: 'worker-loader',
+      },
+
+      /*
        * Typescript loader support for .ts and Angular 2 async routes via .async.ts
        *
        * See: https://github.com/s-panferov/awesome-typescript-loader

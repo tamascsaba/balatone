@@ -13,6 +13,7 @@ import {Footer} from './components/footer';
   encapsulation: ViewEncapsulation.None,
   styles: [
     require('normalize.css'),
+    require('hint.css/hint.css'),
     `
     body {
       color: #FFF;
