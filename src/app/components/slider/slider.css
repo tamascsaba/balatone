@@ -6,7 +6,6 @@
 .slider-bar {
   height: 2px;
   position: relative;
-  margin-right: 20px;
   background: rgba(225, 225, 225, 0.5);
 }
 

@@ -77,16 +77,14 @@
   margin: 0 auto;
 }
 
-.slider-container {
-  width: 250px;
-  margin: 0 20px;
-}
-
-.slider-left {
+.slider-item {
+  width: 300px;
+  padding: 0 20px;
   float: left;
 }
 
-.slider-right {
+.slider-item:last-child {
+  margin-right: 0;
   float: right;
 }
 

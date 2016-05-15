@@ -31,8 +31,7 @@ import {Footer} from './components/footer';
       -ms-transition: background-color .1s linear;
       transition: background-color .1s linear;
     }
-
-    *{
+    *, *:before, *:after {
       box-sizing: border-box;
     }
     `
@@ -44,10 +43,4 @@ import {Footer} from './components/footer';
   `
 })
 export class App {
-  loading = false;
-  url = 'http://balatone.2016.angularattack.io/';
-
-  constructor() {
-
-  }
 }
