@@ -133,21 +133,29 @@ export class Player implements OnInit {
       this.rotate = 0;
       this.displayShape = svg.querySelector('#display-shape').getAttribute('d');
 
+      // Set inital intersections
+      this.processIntersections();
+
       paper.view.onFrame = this.onFrame;
     });
   }
 
   onFrame = () => {
-    this.shape.rotate(this.speed);
-    this.rotate += this.speed;
-    if (this.rotate >= 360) this.rotate = this.rotate - 360;
-
-    for (let i = 0; i < this.lineCount; ++i) {
-      this.processIntersections(this.octagon.children[i], this.shape.children[0]);
+    if (this.play) {
+      this.shape.rotate(this.speed);
+      this.rotate += this.speed;
+      if (this.rotate >= 360) this.rotate = this.rotate - 360;
+      this.processIntersections();
     }
   };
 
-  processIntersections(line, shape) {
+  processIntersections() {
+    for (let i = 0; i < this.lineCount; ++i) {
+      this.setIntersections(this.octagon.children[i], this.shape.children[0]);
+    }
+  }
+
+  setIntersections(line, shape) {
     const intersections = line.getIntersections(shape);
 
     for (let i = 0, length = intersections.length; i < length; ++i) {

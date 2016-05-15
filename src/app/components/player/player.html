@@ -21,6 +21,8 @@
 <div class="player-wrapper">
   <div class="player-display">
     <svg viewBox="0 0 600 600" width="600" height="600">
+
+      <!-- Lines -->
       <g class="display-line">
         <path d="M298.5 100v160"/>
         <path d="M328.23 272.168L441.37 159.03"/>
@@ -32,6 +34,7 @@
         <path d="M158.632 159.032L271.77 272.168"/>
       </g>
 
+      <!-- Shape -->
       <g [ngStyle]="{transform: 'translateZ(0) translate(' + pos + 'px, ' + pos + 'px)'}" class="display-position">
         <g [ngStyle]="{transform: 'translateZ(0) scale(' + size + ')'}" class="display-size">
           <g attr.transform="rotate({{rotate | toFixed}} 300 300)">
@@ -44,10 +47,12 @@
         </g>
       </g>
 
+      <!-- Icons -->
       <g class="icon">
         <use *ngFor="let item of theme.items;" [attr.x]="item.x" [attr.y]="item.y" width="70" height="70" [attr.xlink:href]="'/assets/img/icons.svg#icon-' + item.icon"></use>
       </g>
 
+      <!-- Controls -->
       <g class="control" (click)="onControl()">
         <circle class="control-bg" cx="35" cy="35" r="35"/>
         <path [ngClass]="{'display-none': !play}" d="M38 21h8v28h-8zm-14 0h8v28h-8z"/>
