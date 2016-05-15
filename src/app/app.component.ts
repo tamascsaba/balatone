@@ -1,6 +1,7 @@
 import {Component, ViewEncapsulation} from '@angular/core';
 
 import {Header} from './components/header';
+import {Footer} from './components/footer';
 
 /*
  * App Component
@@ -8,27 +9,28 @@ import {Header} from './components/header';
  */
 @Component({
   selector: 'app',
-  directives: [Header],
+  directives: [Header, Footer],
   encapsulation: ViewEncapsulation.None,
   styles: [
     require('normalize.css'),
     `
-    footer {
-      margin-top: 20px;
-      color: #fff;
-      font-weight: bold;
-      text-align:center;
+    body {
+      color: #FFF;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Open Sans", "Helvetica Neue", sans-serif;
+      font-style: normal;
+      font-size: 1rem;
+      letter-spacing: 0;
+      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      -moz-font-feature-settings: "liga" on;
     }
     `
   ],
   template: `
     <header></header>
-
     <route-view></route-view>
-
-    <footer>
-      We love Angular2 & TypeScript and heavy weight :)
-    </footer>
+    <footer></footer>
   `
 })
 export class App {
