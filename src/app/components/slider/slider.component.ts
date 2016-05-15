@@ -3,21 +3,20 @@ import {NgStyle} from '@angular/common';
 
 @Component({
   selector: 'slider',
-  host: {'(window:mousemove)': 'mousemove($event)', '(window:mouseup)': 'mouseup($event)'},
+  host: {'(window:mousemove)': 'mousemove($event)', '(window:mouseup)': 'mouseup()'},
   directives: [NgStyle],
   styles: [require('./slider.css')],
   template: require('./slider.html')
 })
 export class Slider implements OnInit {
   bar: HTMLDivElement;
-  line: HTMLDivElement;
   container;
   drag: boolean = false;
 
   left: number = 0;
   maxWidth: number = 0;
 
-  valueNumber: number = 0;
+  valueNumber: number = 1;
   valuePercent: string = '100%';
 
   constructor(protected elementRef: ElementRef) {
@@ -26,24 +25,23 @@ export class Slider implements OnInit {
   ngOnInit() {
     this.container = this.elementRef.nativeElement;
     this.bar = this.container.querySelector('.slider-bar');
-    this.line = this.container.querySelector('.slider-line');
   }
 
   mousemove(event) {
-    if (!this.drag) return;
-    this.pos(event);
+    if (this.drag) this.pos(event);
   }
 
-  mouseup(event) {
+  mouseup() {
     this.drag = false;
+    this.change.emit(this.valueNumber);
   }
 
   onMousedown(event) {
-    this.drag = true;
     this.left = this.bar.offsetLeft;
     this.maxWidth = this.bar.offsetWidth;
 
     this.pos(event);
+    this.drag = true;
   }
 
   pos(event) {
@@ -55,11 +53,11 @@ export class Slider implements OnInit {
   setValue(value) {
     this.valueNumber = value;
     this.valuePercent = value * 100 + '%';
-    this.change.emit(value);
   }
 
   @Input() set value(value) {
     this.setValue(value);
+    this.change.emit(value);
   }
 
   @Output() change = new EventEmitter(false);
