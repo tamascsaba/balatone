@@ -24,7 +24,8 @@ export class Player implements OnInit {
   theme: Theme = THEMES.blackbird; // Default theme;
   audios: Points<HTMLAudioElement>;
   play: boolean = false;
-  displayShape: string;
+  shapeData: string;
+  shapeIndex: number = 0;
   shape: paper.Item;
   octagon: paper.Item;
 
@@ -111,9 +112,11 @@ export class Player implements OnInit {
     this.setupCanvas();
 
     this.qp
-      .pluck<string>('theme')
-      .map((theme) => {
+      .map((q) => {
+        const query: any = q;
+        const theme = query.theme;
         if (THEMES[theme] && paper.project) {
+          this.shapeIndex = query.shapeIndex || 0;
           this.theme = THEMES[theme];
           this.setupAudio();
           this.play = false;
@@ -131,7 +134,7 @@ export class Player implements OnInit {
     paper.project.clear();
 
     // Import the intersection svg
-    paper.project.importSVG(this.theme.shapes[0], (elements) => {
+    paper.project.importSVG(this.theme.shapes[this.shapeIndex], (elements) => {
       // Export to use in angular
       const svg = paper.project.exportSVG();
 
@@ -148,7 +151,7 @@ export class Player implements OnInit {
       this.lineCount = this.octagon.children.length;
 
       this.rotate = 0;
-      this.displayShape = svg.querySelector('#display-shape').getAttribute('d');
+      this.shapeData = svg.querySelector('#display-shape').getAttribute('d');
 
       // Set inital intersections
       this.processIntersections();

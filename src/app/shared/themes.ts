@@ -2,7 +2,7 @@ import {millenniumFalcon, formless, cross, crossLight, hat, cloud} from './shape
 
 
 export interface Theme {
-  shapes: Array<string>;
+  shapes: any;
   items: Array<Item>;
 }
 
@@ -32,7 +32,9 @@ export const blackbird: Theme = {
 
 export const starWars: Theme = {
   shapes: [
-    crossLight
+    crossLight,
+    cross,
+    formless
   ],
   items: [
     {icon: 'darth-vader', music: 'star-wars/darth-vader.mp3', x: 264.5, y: 15.5, active: true},

@@ -1,14 +1,3 @@
-.player-wrapper {
-  display: table;
-  width: 100%;
-}
-.player-display {
-  will-change: transform;
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;
-}
-
 .display-line {
   stroke: #FFF;
   stroke-width: 1;

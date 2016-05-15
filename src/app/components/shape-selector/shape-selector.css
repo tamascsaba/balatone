@@ -1,0 +1,14 @@
+.shape-selector {
+  color: #fff;
+  text-align: center;
+}
+
+.shape-link {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.shape-icon {
+  fill: none;
+  stroke: #fff;
+  stroke-width: 1.5;
+}

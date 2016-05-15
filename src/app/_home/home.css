@@ -1,0 +1,14 @@
+.home-wrapper {
+  width: 850px;
+  margin: 0 auto;
+}
+.home-sidebar {
+  float: left;
+  width: 100px;
+  margin: 90px 30px 30px 0;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+}
+.home-content {
+  float: left;
+  width: 600px;
+}

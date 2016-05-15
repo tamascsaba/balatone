@@ -34,6 +34,11 @@ import {Footer} from './components/footer';
     *, *:before, *:after {
       box-sizing: border-box;
     }
+    .clearfix:after {
+      content:" ";
+      display:table;
+      clear:both;
+    }
     `
   ],
   template: `
