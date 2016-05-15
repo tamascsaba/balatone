@@ -52,6 +52,18 @@
         <use *ngFor="let item of theme.items;" [attr.x]="item.x" [attr.y]="item.y" width="70" height="70" [attr.xlink:href]="'/assets/img/icons.svg#icon-' + item.icon"></use>
       </g>
 
+      <!-- Icon click area-->
+      <g class="icon-buttons">
+        <circle class="icon-button" cx="299.5" cy="50.5" r="48" />
+        <circle class="icon-button" cx="477.5" cy="123.5" r="48" />
+        <circle class="icon-button" cx="549.5" cy="300.5" r="48" />
+        <circle class="icon-button" cx="476.5" cy="477.5" r="48" />
+        <circle class="icon-button" cx="299.5" cy="550.5" r="48" />
+        <circle class="icon-button" cx="123.5" cy="477.5" r="48" />
+        <circle class="icon-button" cx="49.5" cy="300.5" r="48" />
+        <circle class="icon-button" cx="122.5" cy="123.5" r="48" />
+      </g>
+
       <!-- Controls -->
       <g class="control" (click)="onControl()">
         <circle class="control-bg" cx="35" cy="35" r="35"/>

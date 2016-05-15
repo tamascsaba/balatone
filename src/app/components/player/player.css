@@ -30,6 +30,19 @@
   stroke-width: 1;
 }
 
+.icon-button {
+  fill: #FFF;
+  transition: all .2s linear;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.icon-button:hover {
+  fill: #FFF;
+  transition: all .2s linear;
+  opacity: 0.3;
+}
+
 .display-volume {
   fill: none;
   stroke: #FFF;
