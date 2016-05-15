@@ -35,6 +35,7 @@ export class Player implements OnInit {
   lineCount: number = 8;
 
   sliderSpeedValue = 0.04;
+  sliderVolumeValue = 1;
   speed: number;
   rotate: number = 0;
 
@@ -228,11 +229,13 @@ export class Player implements OnInit {
   }
 
   onChangeVolume(value) {
+    this.sliderVolumeValue = value;
     this.size = value;
     this.pos = this.center * (1 - value);
   }
 
   onChangeSpeed(value) {
+    this.sliderSpeedValue = value;
     this.speed = 2 * value;
   }
 }

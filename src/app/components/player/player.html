@@ -1,16 +1,16 @@
 <div class="slider-box">
   <div class="slider-item">
-    <svg class="slider-icon">
+    <svg class="slider-icon" (click)="sliderSpeedValue = 0">
       <use xlink:href="/assets/img/icons.svg#icon-speed"></use>
     </svg>
     <slider [value]="sliderSpeedValue" (change)="onChangeSpeed($event)"></slider>
   </div>
 
   <div class="slider-item">
-    <svg class="slider-icon">
+    <svg class="slider-icon" (click)="sliderVolumeValue = 0">
       <use xlink:href="/assets/img/icons.svg#icon-sound"></use>
     </svg>
-    <slider value="1" (change)="onChangeVolume($event)"></slider>
+    <slider [value]="sliderVolumeValue" (change)="onChangeVolume($event)"></slider>
   </div>
 </div>
 
