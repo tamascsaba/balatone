@@ -68,6 +68,33 @@
   transition: all .5s ease;
 }
 
-.display-position{
+.display-position {
   transition: all .5s ease;
+}
+
+.slider-box {
+  width: 600px;
+  margin: 0 auto;
+}
+
+.slider-container {
+  width: 250px;
+  margin: 0 20px;
+}
+
+.slider-left {
+  float: left;
+}
+
+.slider-right {
+  float: right;
+}
+
+.slider-icon {
+  width: 24px;
+  height: 24px;
+  fill: #FFF;
+  position: relative;
+  left: -20px;
+  top: 25px
 }

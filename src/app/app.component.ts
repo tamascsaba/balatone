@@ -25,6 +25,10 @@ import {Footer} from './components/footer';
       -moz-osx-font-smoothing: grayscale;
       -moz-font-feature-settings: "liga" on;
     }
+
+    *{
+      box-sizing: border-box;
+    }
     `
   ],
   template: `
