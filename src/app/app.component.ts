@@ -24,6 +24,12 @@ import {Footer} from './components/footer';
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       -moz-font-feature-settings: "liga" on;
+
+      -webkit-transition: background-color .1s linear;
+      -moz-transition: background-color .1s linear;
+      -o-transition: background-color .1s linear;
+      -ms-transition: background-color .1s linear;
+      transition: background-color .1s linear;
     }
 
     *{
