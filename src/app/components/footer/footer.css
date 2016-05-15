@@ -5,6 +5,16 @@
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   font-size: .8rem;
 }
+
+.link {
+  color: white;
+}
+
+.link:hover, .link:focus {
+  color: white;
+  outline: 0;
+}
+
 .heart {
   width: 12px;
   height: 12px;
