@@ -5,3 +5,8 @@
   border-top: 1px solid rgba(255, 255, 255, 0.2);
   font-size: .8rem;
 }
+.heart {
+  width: 12px;
+  height: 12px;
+  fill: #fff;
+}
