@@ -23,7 +23,6 @@ import {Slider} from '../slider';
 export class Player implements OnInit {
   theme: Theme = THEMES.blackbird; // Default theme;
   audios: Points<HTMLAudioElement>;
-  canvas: HTMLCanvasElement;
   play: boolean = false;
   displayShape: string;
   shape: paper.Item;
@@ -169,6 +168,10 @@ export class Player implements OnInit {
   }
 
   setVolume(name, value) {
+    if (this.size < 1) {
+      value = value * this.size;
+      value = value < 0 ? 0 : value > 1 ? 1 : value;
+    }
     this.audios[name].volume = value;
   }
 
@@ -193,14 +196,12 @@ export class Player implements OnInit {
       this.color.b = colorValue;
     }
 
-    const rgb = 'rgb(' + this.color.r + ',' + this.color.g + ',' + this.color.b + ')';
-
-    document.body.style.backgroundColor = rgb;
+    document.body.style.backgroundColor = 'rgb(' + this.color.r + ',' + this.color.g + ',' + this.color.b + ')';
   }
 
   onChangeVolume(value) {
     this.size = value;
-    this.pos = 300 * (1 - value);
+    this.pos = this.center * (1 - value);
   }
 
   onChangeSpeed(value) {
