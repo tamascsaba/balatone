@@ -1,4 +1,4 @@
-import {millenniumFalcon, formless, cross, crossLight, hat, cloud} from './shapes';
+import * as shapes from './shapes';
 
 
 export interface Theme {
@@ -16,7 +16,14 @@ interface Item {
 
 export const blackbird: Theme = {
   shapes: [
-    {url: cross, icon: 'cross'}
+    {url: shapes.cross, icon: 'cross'},
+    {url: shapes.formless, icon: 'formless'},
+    {url: shapes.bird, icon: 'bird'},
+    {url: shapes.star, icon: 'star'},
+    {url: shapes.cloud, icon: 'cloud'},
+    {url: shapes.flower, icon: 'flower'},
+    {url: shapes.hat, icon: 'hat'},
+    {url: shapes.heart, icon: 'heart'}
   ],
   items: [
     {icon: 'closebird', music: 'blackbird/closebird.mp3', x: 264.5, y: 15.5, active: true},
@@ -32,12 +39,13 @@ export const blackbird: Theme = {
 
 export const starWars: Theme = {
   shapes: [
-    {url: cross, icon: 'cross'},
-    {url: formless, icon: 'cross-light'},
-    {url: millenniumFalcon, icon: 'bird'},
-    {url: cross, icon: 'heart'},
-    {url: formless, icon: 'heart-stone'},
-    {url: millenniumFalcon, icon: 'hat'},
+    {url: shapes.millenniumFalcon, icon: 'millennium-falcon'},
+    {url: shapes.cross, icon: 'cross'},
+    {url: shapes.formless, icon: 'formless'},
+    {url: shapes.crossLight, icon: 'cross-light'},
+    {url: shapes.hat, icon: 'hat'},
+    {url: shapes.heartStone, icon: 'heart-stone'},
+    {url: shapes.star, icon: 'star'},
   ],
   items: [
     {icon: 'darth-vader', music: 'star-wars/darth-vader.mp3', x: 264.5, y: 15.5, active: true},
@@ -53,7 +61,14 @@ export const starWars: Theme = {
 
 export const oneDay: Theme = {
   shapes: [
-    {url: cross, icon: 'cross'}
+    {url: shapes.cloud, icon: 'cloud'},
+    {url: shapes.cross, icon: 'cross'},
+    {url: shapes.flower, icon: 'flower'},
+    {url: shapes.formless, icon: 'formless'},
+    {url: shapes.hat, icon: 'hat'},
+    {url: shapes.heart, icon: 'heart'},
+    {url: shapes.mustache, icon: 'mustache'},
+    {url: shapes.stormCloud, icon: 'storm-cloud'}
   ],
   items: [
     {icon: 'darth-vader', music: 'star-wars/darth-vader.mp3', x: 264.5, y: 15.5, active: true},
