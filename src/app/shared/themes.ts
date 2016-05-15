@@ -16,7 +16,7 @@ interface Item {
 
 export const blackbird: Theme = {
   shapes: [
-    cross
+    {url: cross, icon: 'cross'}
   ],
   items: [
     {icon: 'closebird', music: 'blackbird/closebird.mp3', x: 264.5, y: 15.5, active: true},
@@ -32,9 +32,12 @@ export const blackbird: Theme = {
 
 export const starWars: Theme = {
   shapes: [
-    crossLight,
-    cross,
-    formless
+    {url: cross, icon: 'cross'},
+    {url: formless, icon: 'cross-light'},
+    {url: millenniumFalcon, icon: 'bird'},
+    {url: cross, icon: 'heart'},
+    {url: formless, icon: 'heart-stone'},
+    {url: millenniumFalcon, icon: 'hat'},
   ],
   items: [
     {icon: 'darth-vader', music: 'star-wars/darth-vader.mp3', x: 264.5, y: 15.5, active: true},
@@ -50,7 +53,7 @@ export const starWars: Theme = {
 
 export const oneDay: Theme = {
   shapes: [
-    formless
+    {url: cross, icon: 'cross'}
   ],
   items: [
     {icon: 'darth-vader', music: 'star-wars/darth-vader.mp3', x: 264.5, y: 15.5, active: true},

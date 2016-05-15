@@ -1,6 +1,6 @@
 <a *ngFor="let shape of shapes; let i = index" class="shape-link" linkTo="/" [queryParams]="{shapeIndex: i, theme: themeName}">
   <svg class="shape-icon" width="50" height="50">
-    <use xlink:href="/assets/img/icons.svg#icon-shape-cross"></use>
+    <use [attr.xlink:href]="'/assets/img/icons.svg#icon-shape-' + shape.icon"></use>
   </svg>
 </a>
 

@@ -134,7 +134,7 @@ export class Player implements OnInit {
     paper.project.clear();
 
     // Import the intersection svg
-    paper.project.importSVG(this.theme.shapes[this.shapeIndex], (elements) => {
+    paper.project.importSVG(this.theme.shapes[this.shapeIndex].url, (elements) => {
       // Export to use in angular
       const svg = paper.project.exportSVG();
 
