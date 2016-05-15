@@ -71,14 +71,6 @@
   opacity: 0.3;
 }
 
-.display-size {
-  transition: all .2s linear;
-}
-
-.display-position {
-  transition: all .2s linear;
-}
-
 .slider-box {
   width: 600px;
   margin: 0 auto;
