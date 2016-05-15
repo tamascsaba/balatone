@@ -65,11 +65,11 @@
 }
 
 .display-size {
-  transition: all .5s ease;
+  transition: all .2s linear;
 }
 
 .display-position {
-  transition: all .5s ease;
+  transition: all .2s linear;
 }
 
 .slider-box {

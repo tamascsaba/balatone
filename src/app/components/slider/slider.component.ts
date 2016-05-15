@@ -33,7 +33,6 @@ export class Slider implements OnInit {
 
   mouseup() {
     this.drag = false;
-    this.change.emit(this.valueNumber);
   }
 
   onMousedown(event) {
@@ -53,11 +52,11 @@ export class Slider implements OnInit {
   setValue(value) {
     this.valueNumber = value;
     this.valuePercent = value * 100 + '%';
+    this.change.emit(value);
   }
 
   @Input() set value(value) {
     this.setValue(value);
-    this.change.emit(value);
   }
 
   @Output() change = new EventEmitter(false);

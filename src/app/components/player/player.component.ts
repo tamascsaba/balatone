@@ -213,6 +213,6 @@ export class Player implements OnInit {
   }
 
   onChangeSpeed(value) {
-    this.speed = 5 * value;
+    this.speed = 2 * value;
   }
 }
