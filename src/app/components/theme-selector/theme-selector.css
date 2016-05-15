@@ -1,12 +1,10 @@
 .theme-selector {
-  width: 600px;
-  margin: 0 auto;
   color: #fff;
+  text-align: center;
 }
 
 .helper {
   margin-top: 10px;
-  text-align: center;
 }
 
 .theme-selector-link {
