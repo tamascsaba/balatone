@@ -12,3 +12,6 @@
   stroke: #fff;
   stroke-width: 1.5;
 }
+.shape-link-active {
+  stroke-width: 3;
+}

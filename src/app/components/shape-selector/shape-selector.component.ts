@@ -10,17 +10,14 @@ import {THEMES} from '../../shared/themes';
 })
 export class ShapeSelector {
   themeName: string;
+  shapeIndex: number;
   shapes: Array<string>;
   constructor(private qp: QueryParams) {
     this.qp
       .map((q) => {
         const query: any = q;
-
-        if (!query.theme) {
-          query.theme = 'blackbird';
-        }
-
-        this.themeName = query.theme;
+        this.shapeIndex = parseInt(query.shapeIndex, 10) || 0;
+        this.themeName = query.theme || 'blackbird';
         this.shapes = THEMES[this.themeName].shapes;
       }).subscribe();
   }
