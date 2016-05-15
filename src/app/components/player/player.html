@@ -48,20 +48,20 @@
       </g>
 
       <!-- Icons -->
-      <g class="icon">
-        <use *ngFor="let item of theme.items;" [attr.x]="item.x" [attr.y]="item.y" width="70" height="70" [attr.xlink:href]="'/assets/img/icons.svg#icon-' + item.icon"></use>
+      <g class="icons">
+        <use *ngFor="let item of theme.items;" class="icon" [ngClass]="{'active-icon': item.active}" [attr.x]="item.x" [attr.y]="item.y" width="70" height="70" [attr.xlink:href]="'/assets/img/icons.svg#icon-' + item.icon"></use>
       </g>
 
       <!-- Icon click area-->
       <g class="icon-buttons">
-        <circle class="icon-button" cx="299.5" cy="50.5" r="48" />
-        <circle class="icon-button" cx="477.5" cy="123.5" r="48" />
-        <circle class="icon-button" cx="549.5" cy="300.5" r="48" />
-        <circle class="icon-button" cx="476.5" cy="477.5" r="48" />
-        <circle class="icon-button" cx="299.5" cy="550.5" r="48" />
-        <circle class="icon-button" cx="123.5" cy="477.5" r="48" />
-        <circle class="icon-button" cx="49.5" cy="300.5" r="48" />
-        <circle class="icon-button" cx="122.5" cy="123.5" r="48" />
+        <circle class="icon-button" cx="299.5" cy="50.5" r="48" (click)="onSwitchSoundEffect(0, 'top')" />
+        <circle class="icon-button" cx="477.5" cy="123.5" r="48" (click)="onSwitchSoundEffect(1, 'top-right')" />
+        <circle class="icon-button" cx="549.5" cy="300.5" r="48" (click)="onSwitchSoundEffect(2, 'right')" />
+        <circle class="icon-button" cx="476.5" cy="477.5" r="48" (click)="onSwitchSoundEffect(3, 'right-bottom')" />
+        <circle class="icon-button" cx="299.5" cy="550.5" r="48" (click)="onSwitchSoundEffect(4, 'bottom')" />
+        <circle class="icon-button" cx="123.5" cy="477.5" r="48" (click)="onSwitchSoundEffect(5, 'bottom-left')" />
+        <circle class="icon-button" cx="49.5" cy="300.5" r="48" (click)="onSwitchSoundEffect(6, 'left')" />
+        <circle class="icon-button" cx="122.5" cy="123.5" r="48" (click)="onSwitchSoundEffect(7, 'left-top')" />
       </g>
 
       <!-- Controls -->

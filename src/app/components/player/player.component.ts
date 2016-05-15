@@ -78,16 +78,33 @@ export class Player implements OnInit {
   }
 
   onControl() {
+    let i = 0;
     for (let audio in this.audios) {
+      const active = this.theme.items[i++].active;
+
       if (this.audios.hasOwnProperty(audio)) {
         if (this.play) {
           this.audios[audio].pause();
-        } else {
+        } else if (active) {
           this.audios[audio].play();
         }
       }
     }
     this.play = !this.play;
+  }
+
+  onSwitchSoundEffect(index, key) {
+    this.theme.items[index].active = !this.theme.items[index].active;
+
+    if (this.play) {
+      const audio = this.audios[key];
+
+      if (audio.paused && this.theme.items[index].active) {
+        audio.play();
+      } else if (!audio.paused && !this.theme.items[index].active) {
+        audio.pause();
+      }
+    }
   }
 
   ngOnInit() {

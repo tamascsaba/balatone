@@ -28,6 +28,11 @@
   fill: none;
   stroke: #FFF;
   stroke-width: 1;
+  stroke-dasharray: 3, 3;
+}
+
+.active-icon{
+  stroke-dasharray: 0;
 }
 
 .icon-button {
