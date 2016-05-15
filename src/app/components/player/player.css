@@ -77,13 +77,14 @@
 }
 
 .slider-item {
-  width: 300px;
+  width: 270px;
   padding: 0 20px;
   float: left;
 }
 
 .slider-item:last-child {
   margin-right: 0;
+  width: 15px;
   float: right;
 }
 

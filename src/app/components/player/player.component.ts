@@ -42,6 +42,7 @@ export class Player implements OnInit {
   size: number = 1;
   pos: number = 0;
 
+  bgChangeEnabled: boolean = true;
   color = {r: 0, g: 0, b: 0};
 
   points: Points<any> = {
@@ -82,9 +83,8 @@ export class Player implements OnInit {
   onControl() {
     let i = 0;
     for (let audio in this.audios) {
-      const active = this.theme.items[i++].active;
-
       if (this.audios.hasOwnProperty(audio)) {
+        const active = this.theme.items[i++].active;
         if (this.play) {
           this.audios[audio].pause();
         } else if (active) {
@@ -224,8 +224,9 @@ export class Player implements OnInit {
     } else if (name === 'bottom-left') {
       this.color.b = colorValue;
     }
-
-    document.body.style.backgroundColor = 'rgb(' + this.color.r + ',' + this.color.g + ',' + this.color.b + ')';
+    if (this.bgChangeEnabled) {
+      document.body.style.backgroundColor = 'rgb(' + this.color.r + ',' + this.color.g + ',' + this.color.b + ')';
+    }
   }
 
   onChangeVolume(value) {

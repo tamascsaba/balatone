@@ -12,6 +12,11 @@
     </svg>
     <slider [value]="sliderVolumeValue" (change)="onChangeVolume($event)"></slider>
   </div>
+  <div class="slider-item">
+    <svg class="slider-icon" (click)="bgChangeEnabled = !bgChangeEnabled">
+      <use [attr.xlink:href]="'/assets/img/icons.svg#icon-bg-' + bgChangeEnabled"></use>
+    </svg>
+  </div>
 </div>
 
 <div class="visually-hidden">
