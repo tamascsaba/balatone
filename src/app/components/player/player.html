@@ -26,8 +26,8 @@
         <path d="M158.632 159.032L271.77 272.168"/>
       </g>
 
-      <g [ngStyle]="{transform: 'translate(' + pos + 'px, ' + pos + 'px)'}">
-        <g [ngStyle]="{transform: 'scale(' + size + ')'}">
+      <g [ngStyle]="{transform: 'translateZ(0) translate(' + pos + 'px, ' + pos + 'px)'}" class="display-position">
+        <g [ngStyle]="{transform: 'translateZ(0) scale(' + size + ')'}" class="display-size">
           <g attr.transform="rotate({{rotate | toFixed}} 300 300)">
             <path class="display-shape" [attr.d]="displayShape"/>
             <path fill="none" d="M0,300a300,300 0 1,0 600,0a300,300 0 1,0 -600,0"></path>

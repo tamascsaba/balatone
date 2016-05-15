@@ -63,3 +63,11 @@
 .control:hover .control-bg{
   opacity: 0.3;
 }
+
+.display-size {
+  transition: all .5s ease;
+}
+
+.display-position{
+  transition: all .5s ease;
+}
