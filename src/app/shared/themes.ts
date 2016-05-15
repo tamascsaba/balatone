@@ -81,4 +81,27 @@ export const oneDay: Theme = {
   ]
 };
 
-export const THEMES = {blackbird, starWars, oneDay};
+export const orchestra: Theme = {
+  shapes: [
+    {url: shapes.flower, icon: 'flower'},
+    {url: shapes.hat, icon: 'hat'},
+    {url: shapes.mustache, icon: 'bird'},
+    {url: shapes.heart, icon: 'heart'},
+    {url: shapes.formless, icon: 'formless'},
+    {url: shapes.cross, icon: 'cross'},
+    {url: shapes.cloud, icon: 'cloud'},
+    {url: shapes.stormCloud, icon: 'star'}
+  ],
+  items: [
+    {icon: 'piano', music: 'orchestra/piano.mp3', x: 264.5, y: 15.5, active: true},
+    {icon: 'strings', music: 'orchestra/strings.mp3', x: 442.5, y: 88.5, active: true},
+    {icon: 'cutepiano', music: 'orchestra/cutepiano.mp3', x: 514.5, y: 265.5, active: true},
+    {icon: 'cello', music: 'orchestra/cello.mp3', x: 441.5, y: 442.5, active: true},
+    {icon: 'violins', music: 'orchestra/violins.mp3', x: 264.5, y: 515.5, active: true},
+    {icon: 'drumkit', music: 'orchestra/drumkit.mp3', x: 88.5, y: 442.5, active: true},
+    {icon: 'spiccato', music: 'orchestra/spiccato.mp3', x: 14.5, y: 265.5, active: true},
+    {icon: 'xylophone', music: 'orchestra/xylophone.mp3', x: 87.5, y: 88.5, active: true}
+  ]
+};
+
+export const THEMES = {blackbird, starWars, oneDay, orchestra};

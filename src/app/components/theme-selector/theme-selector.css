@@ -14,3 +14,9 @@
 .theme-selector-link path{
   fill: #FFF;
 }
+
+.line {
+  fill: none;
+  stroke: #FFF;
+  stroke-width: .5;
+}
