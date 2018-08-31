@@ -51,7 +51,7 @@
             <path fill="none" d="M0,300a300,300 0 1,0 600,0a300,300 0 1,0 -600,0"></path>
           </g>
 
-          <circle *ngFor="let item of getPoints();" attr.cx="{{points[item].x}}" attr.cy="{{points[item].y}}" class="display-circle" r="6"/>
+          <circle *ngFor="let item of getPoints();" [attr.cx]="points[item].x" [attr.cy]="points[item].y" class="display-circle" r="6"/>
           <circle class="display-volume" cx="300" cy="300" r="200" />
         </g>
       </g>
