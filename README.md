@@ -1,5 +1,8 @@
 # This is your [AngularAttack](https://www.angularattack.com) 2016 Repo
 
+### You can check the working demo at https://balatone.surge.sh/
+Despite being over 8 years old, it still works. :rocket:
+
 This repo is the start of your AngularAttack 2016 entry. It contains the simple [Angular2 starter](https://angular.io/docs/ts/latest/quickstart.html) files.
 
 **DO NOT MAKE ANY CODE CHECKINS TO THIS REPOSITORY BEFORE THE COMPETITION OFFICIALLY BEGINS.**
